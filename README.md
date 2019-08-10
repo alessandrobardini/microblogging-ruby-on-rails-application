@@ -1,16 +1,38 @@
 # Ruby on Rails Sample Application
 
-A simple Ruby on Rails web application for managing users and posts.
-Based on the Toy App described in this [Rails tutorial](https://www.railstutorial.org/book/toy_app). 
 
-## Setup
-Make sure you have installed:
-- Ruby
-- The `bundler` Ruby gem 
+This is the sample application for
+[*Ruby on Rails Tutorial:
+Learn Web Development with Rails*](https://www.railstutorial.org/)
 
-Then
-- Run `bundle install` to install all needed gems
+## License
 
+All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
+is available jointly under the MIT License and the Beerware License. See
+[LICENSE.md](LICENSE.md) for details.
 
-## Start the app
-- Run `rails server` to run the app on `http://localhost:3000`
+## Getting started
+
+To get started with the app, clone the repo and then install the needed gems:
+
+```
+$ bundle install 
+```
+
+Next, migrate the database:
+
+```
+$ rails db:migrate
+```
+
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
