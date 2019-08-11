@@ -53,4 +53,10 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_not duplicate_user.valid?
   end
+
+  test "email addresses is lowercased before being saved" do
+    @user.email = "CamelCase@DomainCamelcased.it"
+    @user.save
+    assert_equal(@user.email, 'camelcase@domaincamelcased.it')
+  end
 end
