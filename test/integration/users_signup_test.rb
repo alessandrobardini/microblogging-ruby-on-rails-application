@@ -7,6 +7,18 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'form[action="/signup"]'
   end
 
+  test "user is created" do
+    assert_difference 'User.count', 1 do
+      post signup_path, params: { user: { name:  "Alessandro Bardini",
+                                         email: "alessandro@gmail.com",
+                                         password:              "foobar",
+                                         password_confirmation: "foobar" } }
+    end
+    follow_redirect!
+    assert_template 'users/show'
+    assert_equal flash[:success], "Welcome to the Sample App!"
+  end
+
   test "user is not created if the name is blank" do
     assert_no_difference 'User.count' do
       post signup_path, params: { user: { name:  "",
