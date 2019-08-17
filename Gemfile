@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'faker'
 
+gem 'will_paginate',           '3.1.7'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
