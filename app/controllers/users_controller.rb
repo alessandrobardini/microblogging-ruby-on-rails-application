@@ -47,14 +47,11 @@ class UsersController < ApplicationController
   end
 
   # Before filters
+  private
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation )
     end
 
     # Confirms a admin user.
@@ -67,12 +64,4 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
     end
-
-  private
-
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation )
-    end
-
 end
