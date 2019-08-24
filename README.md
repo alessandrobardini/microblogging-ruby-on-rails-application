@@ -1,4 +1,4 @@
-# Ruby on Rails Sample Application (Twitter)
+# Ruby on Rails Microblogging Application 
 
 
 This is the sample application for
